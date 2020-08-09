@@ -11,7 +11,6 @@ public class Person implements Comparable<Person>, Cloneable {
     private int age;
 
 
-
     @Override
     public int compareTo(Person person) {
 
@@ -21,6 +20,7 @@ public class Person implements Comparable<Person>, Cloneable {
             if (personCompare == 0) {
                 personCompare = Double.compare(age, person.age);
                 if (personCompare == 0) {
+                    return personCompare;
                 }
             }
         }
