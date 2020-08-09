@@ -11,7 +11,6 @@ public class MyArrayListRunner {
         list.add("Строка3");
 
 
-
 //        list.add("Строка4");
 //        list.add("Строка5");
 //        list.add("Строка6");

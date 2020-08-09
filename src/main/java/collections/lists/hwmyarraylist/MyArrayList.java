@@ -130,7 +130,7 @@ public class MyArrayList {
 
     public int indexOf(Object o) {
         for (int i = 0; i < realSize; i++) {
-            if(array[i] == o){
+            if (array[i] == o) {
                 return i;
             }
 

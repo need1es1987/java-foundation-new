@@ -16,14 +16,14 @@ public class MyArrayListTest {
         MyArrayList list = new MyArrayList();
         list.add(ELEMENT);
 
-        Assertions.assertEquals(1,list.size());
+        Assertions.assertEquals(1, list.size());
         Assertions.assertEquals(ELEMENT, list.get(0));
     }
 
     @Test
     @DisplayName("корректно выводит элемент по индексу")
-    public void shouldCorrectOutputElementsByIndex(){
-        MyArrayList list= new MyArrayList();
+    public void shouldCorrectOutputElementsByIndex() {
+        MyArrayList list = new MyArrayList();
         list.add(ELEMENT);
         list.add(ELEMENT1);
         list.get(1);
@@ -33,8 +33,8 @@ public class MyArrayListTest {
 
     @Test
     @DisplayName("корректно удаляет элемент")
-    public void shouldCorrectRemoveElements(){
-        MyArrayList list= new MyArrayList();
+    public void shouldCorrectRemoveElements() {
+        MyArrayList list = new MyArrayList();
         list.add(ELEMENT);
         list.add(ELEMENT1);
         list.remove(ELEMENT);
@@ -45,8 +45,8 @@ public class MyArrayListTest {
 
     @Test
     @DisplayName("корректно очищает список элементов")
-    public void shouldCorrectClearElements(){
-        MyArrayList list= new MyArrayList();
+    public void shouldCorrectClearElements() {
+        MyArrayList list = new MyArrayList();
         list.add(ELEMENT);
         list.add(ELEMENT1);
         list.clear();
@@ -56,22 +56,22 @@ public class MyArrayListTest {
 
     @Test
     @DisplayName("корректно заменяет элемент по индексу")
-    public void shouldCorrectSetElementsByIndex(){
-        MyArrayList list= new MyArrayList();
+    public void shouldCorrectSetElementsByIndex() {
+        MyArrayList list = new MyArrayList();
         list.add(ELEMENT);
         list.add(ELEMENT1);
-        list.set(0,ELEMENT1);
+        list.set(0, ELEMENT1);
 
         Assertions.assertEquals(ELEMENT1, list.get(0));
     }
 
     @Test
     @DisplayName("корректно добавляет элемент по индексу")
-    public void shouldCorrectAddElementsByIndex(){
-        MyArrayList list= new MyArrayList();
+    public void shouldCorrectAddElementsByIndex() {
+        MyArrayList list = new MyArrayList();
         list.add(ELEMENT);
         list.add(ELEMENT1);
-        list.add(1,ELEMENT);
+        list.add(1, ELEMENT);
 
         Assertions.assertEquals(ELEMENT, list.get(1));
         Assertions.assertEquals(3, list.size());
@@ -79,8 +79,8 @@ public class MyArrayListTest {
 
     @Test
     @DisplayName("корректно удаляет элемент по индексу")
-    public void shouldCorrectRemoveElementsByIndex(){
-        MyArrayList list= new MyArrayList();
+    public void shouldCorrectRemoveElementsByIndex() {
+        MyArrayList list = new MyArrayList();
         list.add(ELEMENT);
         list.add(ELEMENT1);
         list.remove(0);
@@ -91,8 +91,8 @@ public class MyArrayListTest {
 
     @Test
     @DisplayName("корректно выводить индекс первого совпавшего элемента")
-    public void shouldCorrectOutputIndexOfFirstMatchedElement(){
-        MyArrayList list= new MyArrayList();
+    public void shouldCorrectOutputIndexOfFirstMatchedElement() {
+        MyArrayList list = new MyArrayList();
         list.add(ELEMENT);
         list.add(ELEMENT1);
         list.add(ELEMENT1);
