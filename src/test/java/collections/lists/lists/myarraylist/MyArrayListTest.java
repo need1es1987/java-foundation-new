@@ -21,7 +21,7 @@ public class MyArrayListTest {
     }
 
     @Test
-    @DisplayName("корректно выводит элемент по индексу")
+    @DisplayName("корректно возвращает элемент по индексу")
     public void shouldCorrectOutputElementsByIndex() {
         MyArrayList list = new MyArrayList();
         list.add(ELEMENT);
@@ -90,7 +90,7 @@ public class MyArrayListTest {
     }
 
     @Test
-    @DisplayName("корректно выводить индекс первого совпавшего элемента")
+    @DisplayName("корректно возвращает индекс первого совпавшего элемента")
     public void shouldCorrectOutputIndexOfFirstMatchedElement() {
         MyArrayList list = new MyArrayList();
         list.add(ELEMENT);

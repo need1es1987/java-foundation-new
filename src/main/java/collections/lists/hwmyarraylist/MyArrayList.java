@@ -16,10 +16,7 @@ public class MyArrayList {
 
 
     public boolean isEmpty() {
-        if (realSize == 0) {
-            return true;
-        }
-        return false;
+        if (realSize == 0) return true; return false;
     }
 
 
@@ -40,7 +37,7 @@ public class MyArrayList {
             array = resArray;
         }
         array[realSize++] = o;
-        return false;
+        return true;
     }
 
 
@@ -69,8 +66,10 @@ public class MyArrayList {
     public void clear() {
         if (realSize == 0) {
             System.out.println("Список пуст! ");
-        } else for (int i = 0; i < realSize; i++) {
-            array[i] = null;
+        } else {
+            for (int i = 0; i < realSize; i++) {
+                array[i] = null;
+            }
         }
         realSize = 0;
         System.out.println("Список очищен! ");
@@ -135,7 +134,7 @@ public class MyArrayList {
             }
 
         }
-        return 0;
+        return -1;
     }
 }
 
