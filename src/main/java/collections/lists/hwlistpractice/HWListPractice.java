@@ -61,14 +61,13 @@ public class HWListPractice {
 
         System.out.println("Каждый третий элемент списка : "); // Вывод элементов списка с индексом кратным 3
         for (int i = 0; i < films1.size() - 1; i++) {
-            if (i % 3 == 0) {
-                System.out.println(films1.get(i) + ", ");
-            }
+            i = i + 3;
+            System.out.println(films1.get(i));
         }
 
         System.out.println("Выводим все элементы списка равные piratesOfTheCaribbean1 : ");
         for (int i = 0; i < films2.size(); i++) {
-            if (films2.get(i).equals(piratesOfTheCaribbean1) == true) {
+            if (films2.get(i).equals(piratesOfTheCaribbean1)) {
                 System.out.println(films2.get(i));
             }
         }
@@ -88,7 +87,7 @@ public class HWListPractice {
         films1.add(piratesOfTheCaribbean2);
 
 
-        int count = 0;   // Возвращаем первые 2 элемента равные ***
+        int count = 0;   // Пропускаем первые 2 элемента равные ***
         for (int i = 0; i < films1.size(); i++) {
             if (films1.get(i).equals(piratesOfTheCaribbean1) == true) {
                 count++;
