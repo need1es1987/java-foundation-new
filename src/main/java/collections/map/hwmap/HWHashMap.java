@@ -36,7 +36,6 @@ public class HWHashMap {
         manFruitMap.put(alekseev, banana);
         manFruitMap.put(sidorov, apple);
         manFruitMap.put(artemiev, pineapple);
-        ;
         manFruitMap.put(ivanov, apple);
         manFruitMap.put(petrov, apple);
         manFruitMap.put(afanasiev, pear);
@@ -44,12 +43,12 @@ public class HWHashMap {
         manFruitMap.put(afanasiev1, apple2);
 
 
-        manFruitMap.remove(sidorov, apple);
+        manFruitMap.remove(sidorov);
         manFruitMap.put(sidorov, apple);
 
-        System.out.println("Проверяем что Иванов выбрал Ананас -> " + manFruitMap.get(ivanov));
+        System.out.println("Проверяем что Иванов выбрал Ананас -> " + manFruitMap.containsValue(pineapple));
         System.out.println();
-        System.out.println("Проверяем что Петров выбрал Грушу -> " + manFruitMap.get(petrov));
+        System.out.println("Проверяем что Петров выбрал Грушу -> " + manFruitMap.containsValue(pear));
         System.out.println();
 
         for (Man key : manFruitMap.keySet()) {
