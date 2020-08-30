@@ -19,6 +19,7 @@ public class HWMyLinkedList {
         if (head == null) {
             return 0;
         }
+
         int size = 0;
         NodeHW curNode = head;
         while (curNode != null) {
@@ -29,8 +30,7 @@ public class HWMyLinkedList {
     }
 
     public boolean isEmpty() {
-        if (head == null) return true;
-        return false;
+        return head == null;
     }
 
     public boolean contains(Object o) {
@@ -39,12 +39,12 @@ public class HWMyLinkedList {
         }
 
         NodeHW curNode = head;
-        if (curNode.getValue().equals(o) == true) {
+        if (curNode.getValue().equals(o)) {
             return true;
         }
 
         while (curNode.getNext() != null) {
-            if (curNode.getNext().getValue().equals(o) == true) {
+            if (curNode.getNext().getValue().equals(o)) {
                 return true;
             }
             curNode = curNode.getNext();
@@ -67,16 +67,14 @@ public class HWMyLinkedList {
     }
 
     public boolean remove(Object o) {
-        if (head == null) {
-            return false;
-        } else {
+        if (head != null) {
             NodeHW removeElement = head;
-            if (removeElement.getValue().equals(o) == true) {
+            if (removeElement.getValue().equals(o)) {
                 head = head.getNext();
             } else {
                 NodeHW curRemoveNode = head;
                 while (curRemoveNode.getNext() != null) {
-                    if (curRemoveNode.getNext().getValue().equals(o) == true) {
+                    if (curRemoveNode.getNext().getValue().equals(o)) {
                         break;
                     }
                     curRemoveNode = curRemoveNode.getNext();
@@ -155,15 +153,15 @@ public class HWMyLinkedList {
                 removableNode = head;
                 head = head.getNext();
             } else {
-                NodeHW cureNode = head;
+                NodeHW curNode = head;
                 int curIndex = 0;
 
                 while (curIndex != index - 1) {
                     curIndex++;
-                    cureNode = cureNode.getNext();
+                    curNode = curNode.getNext();
                 }
-                removableNode = cureNode.getNext();
-                cureNode.setNext(removableNode.getNext());
+                removableNode = curNode.getNext();
+                curNode.setNext(removableNode.getNext());
                 removableNode.setNext(null);
             }
             return removableNode;
@@ -185,7 +183,7 @@ public class HWMyLinkedList {
             NodeHW curNode = head;
             int curIndex = 0;
             while (curNode != null) {
-                if (curNode.getValue().equals(o) == true) {
+                if (curNode.getValue().equals(o)) {
                     return curIndex;
                 }
                 curNode = curNode.getNext();
@@ -195,31 +193,21 @@ public class HWMyLinkedList {
         return -1;
     }
 
+
     public int lastIndexOf(Object o) {
         if (head != null) {
             NodeHW curNode = head;
             int curIndex = 0;
             int index = 0;
-            int sumOfElements = 0;
             while (curNode != null) {
-                if (curNode.getValue().equals(o) == true) {
-                    ++sumOfElements;
-                    break;
+                if (curNode.getValue().equals(o)) {
+                    curIndex = index;
                 }
+                index++;
                 curNode = curNode.getNext();
             }
-            if (sumOfElements == 0) {
-                return -1;
-            }
-            NodeHW curNextNode = head;
-            while (curNextNode != null) {
-                if (curNextNode.getValue().equals(o) == true) {
-                    index = curIndex;
-                }
-                curNextNode = curNextNode.getNext();
-                curIndex++;
-            }
-            return index;
+
+            return curIndex;
         }
         return -1;
     }
