@@ -16,7 +16,8 @@ public class MyArrayList {
 
 
     public boolean isEmpty() {
-        if (realSize == 0) return true; return false;
+        if (realSize == 0) return true;
+        return false;
     }
 
 
@@ -77,8 +78,13 @@ public class MyArrayList {
     }
 
 
+    public boolean isIndexCorrect(int index) {
+        return (index >= realSize) && (index >= 0);
+    }
+
+
     public Object get(int index) {
-        if ((index >= realSize) && (index >= 0)) {
+        if (isIndexCorrect(index)) {
             throw new IndexOutOfBoundsException();
         }
         return array[index];
@@ -86,7 +92,7 @@ public class MyArrayList {
 
 
     public Object set(int index, Object element) {
-        if ((index >= realSize) && (index >= 0)) {
+        if (isIndexCorrect(index)) {
             throw new IndexOutOfBoundsException();
         }
         array[index] = element;
@@ -95,7 +101,7 @@ public class MyArrayList {
 
 
     public void add(int index, Object element) {
-        if ((index >= realSize) && (index >= 0)) {
+        if (isIndexCorrect(index)) {
             throw new IndexOutOfBoundsException();
         }
         if (realSize < array.length) {
@@ -114,7 +120,7 @@ public class MyArrayList {
 
 
     public Object remove(int index) {
-        if ((index >= realSize) && (index >= 0)) {
+        if (isIndexCorrect(index)) {
             throw new IndexOutOfBoundsException();
         }
 

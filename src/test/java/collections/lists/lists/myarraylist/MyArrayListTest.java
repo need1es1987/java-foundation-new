@@ -17,7 +17,7 @@ public class MyArrayListTest {
         list.add(ELEMENT);
 
         Assertions.assertEquals(1, list.size());
-        Assertions.assertEquals(ELEMENT, list.get(0));
+        Assertions.assertTrue(list.get(0).equals(ELEMENT));
     }
 
     @Test
