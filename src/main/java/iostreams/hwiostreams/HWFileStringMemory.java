@@ -59,6 +59,8 @@ public class HWFileStringMemory {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
+                } else {
+                    System.out.println("Введено количество предложений больше 10, начните заново");
                 }
             } else {
                 System.out.println("Данный файл уже существует, начните заново");
