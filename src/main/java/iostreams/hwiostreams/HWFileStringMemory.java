@@ -28,35 +28,40 @@ public class HWFileStringMemory {
             String filePath = bufferedReader.readLine();
             String myFile = filePath + "/" + fileName + ".txt";
             File fileCreatable = new File(myFile);
-            System.out.print("Введите текст не более 10 предложений - ");
-            String fileText = bufferedReader.readLine();
-            int proposal = 0;
-            int textLength = fileText.length();
-            String foundSymbols = "[.!?]\\s[A-Z]";
-            for (int i = 0; i < textLength; i++) {
-                if (foundSymbols.indexOf(fileText.charAt(i)) != -1) {
-                    proposal++;
-                }
-            }
-            System.out.println("Количество предложений " + proposal);
 
-            if (proposal <= 10) {
-                try (PrintWriter printWriter = new PrintWriter(fileCreatable)) {
-                    printWriter.println(fileText);
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                }
-
-                try (BufferedReader fileReader = new BufferedReader(new FileReader(fileCreatable))) {
-                    String input;
-                    while ((input = fileReader.readLine()) != null) {
-                        System.out.println(fileCreatable.getName() + " содержит текст - " + input);
-                        list.add(input);
-                        break;
+            if (!fileCreatable.exists()) {
+                System.out.print("Введите текст не более 10 предложений - ");
+                String fileText = bufferedReader.readLine();
+                int proposal = 0;
+                int textLength = fileText.length();
+                String foundSymbols = "[.!?]\\s[A-Za-z]";
+                for (int i = 0; i < textLength; i++) {
+                    if (foundSymbols.indexOf(fileText.charAt(i)) != -1) {
+                        proposal++;
                     }
-                } catch (IOException e) {
-                    e.printStackTrace();
                 }
+                System.out.println("Количество предложений " + proposal);
+
+                if (proposal <= 10) {
+                    try (PrintWriter printWriter = new PrintWriter(fileCreatable)) {
+                        printWriter.println(fileText);
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
+
+                    try (BufferedReader fileReader = new BufferedReader(new FileReader(fileCreatable))) {
+                        String input;
+                        while ((input = fileReader.readLine()) != null) {
+                            System.out.println(fileCreatable.getName() + " содержит текст - " + input);
+                            list.add(input);
+                            break;
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            } else {
+                System.out.println("Данный файл уже существует, начните заново");
             }
         } catch (IOException e) {
             e.printStackTrace();
